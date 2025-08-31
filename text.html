@@ -1,0 +1,224 @@
+<!-- Seção Sobre Mim -->
+<section id="sobre-mim" aria-labelledby="sobre-mim-titulo">
+  <div class="sobre-container">
+    <figure class="sobre-foto">
+      <img src="https://via.placeholder.com/420x500.png?text=Sua+Foto" alt="Foto de [Seu Nome], sorrindo e olhando para a câmera.">
+    </figure>
+
+    <div class="sobre-conteudo">
+      <h2 id="sobre-mim-titulo">✌️ Sobre mim</h2>
+      <p class="sobre-intro">
+        Oi! Eu sou <strong>[Seu Nome]</strong>, dev front-end com uma quedinha por interfaces bonitas e código limpo.
+        Se me der um café e um editor de código, eu fico feliz por horas.
+      </p>
+      <p>
+        Comecei por curiosidade, fiquei por paixão e hoje não me vejo fazendo outra coisa. Gosto de trabalhar com
+        <strong>React</strong>, <strong>TypeScript</strong> e aquele <strong>CSS esperto</strong> que resolve sem complicar.
+      </p>
+
+      <div class="sobre-cards">
+        <div class="card">
+          <h3>Habilidades</h3>
+          <ul class="skills">
+            <li><span class="tag">HTML</span></li>
+            <li><span class="tag">CSS</span></li>
+            <li><span class="tag">JavaScript</span></li>
+            <li><span class="tag">React</span></li>
+            <li><span class="tag">TypeScript</span></li>
+            <li><span class="tag">Git</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Curiosidades</h3>
+          <ul class="lista">
+            <li>Console.log é meu terapeuta informal.</li>
+            <li>Viciado em pão de queijo e trilhas sonoras de games.</li>
+            <li>Deploy de primeira? Já aconteceu. Uma vez.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sobre-cta">
+        <a class="botao" href="mailto:seuemail@exemplo.com">Fale comigo</a>
+        <nav class="social">
+          <a href="https://github.com/seuusuario" aria-label="GitHub">🐙 GitHub</a>
+          <a href="https://www.linkedin.com/in/seuusuario" aria-label="LinkedIn">💼 LinkedIn</a>
+          <a href="https://www.instagram.com/seuusuario" aria-label="Instagram">📸 Instagram</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Estilos -->
+<style>
+  :root{
+    --bg:#0b0b10;
+    --card:#12121a;
+    --text:#e7e7ee;
+    --muted:#a5a6b0;
+    --primary:#7c5cff;
+    --primary-2:#5d3cff;
+    --border:#232334;
+    --tag-bg:#1a1b2a;
+  }
+
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f7f8fb;
+      --card:#ffffff;
+      --text:#1f2230;
+      --muted:#5a5c67;
+      --primary:#6a4cff;
+      --primary-2:#4a2fff;
+      --border:#e7e8ee;
+      --tag-bg:#f0f1f7;
+    }
+  }
+
+  #sobre-mim{
+    background: linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--bg) 85%, var(--primary) 15%));
+    padding: 72px 20px;
+  }
+
+  .sobre-container{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .sobre-foto{
+    margin: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  }
+  .sobre-foto img{
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 6/7;
+    object-fit: cover;
+  }
+
+  .sobre-conteudo h2{
+    font-size: clamp(28px, 3vw, 40px);
+    margin: 0 0 12px;
+    color: var(--text);
+  }
+  .sobre-intro{
+    font-size: 1.125rem;
+    color: var(--text);
+    margin: 0 0 10px;
+  }
+  .sobre-conteudo p{
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0 0 18px;
+  }
+
+  .sobre-cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .card{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .card h3{
+    margin: 0 0 12px;
+    font-size: 1rem;
+    letter-spacing: .3px;
+    color: var(--text);
+  }
+
+  .skills, .lista{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+  }
+  .lista{
+    flex-direction: column;
+    gap: 8px;
+  }
+  .lista li{
+    color: var(--muted);
+  }
+
+  .tag{
+    background: var(--tag-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: .9rem;
+    display: inline-block;
+  }
+
+  .sobre-cta{
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .botao{
+    background: linear-gradient(135deg, var(--primary), var(--primary-2));
+    color: #fff;
+    border: 0;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 8px 18px rgba(92,63,255,.35);
+    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  }
+  .botao:hover{
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: 0 10px 20px rgba(92,63,255,.4);
+  }
+
+  .social{
+    display: flex;
+    gap: 12px;
+  }
+  .social a{
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: var(--card);
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .social a:hover{
+    color: var(--text);
+    border-color: color-mix(in srgb, var(--primary), var(--border) 40%);
+    background: color-mix(in srgb, var(--card) 80%, var(--primary) 20%);
+  }
+
+  @media (min-width: 880px){
+    .sobre-container{
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+    }
+    .sobre-cards{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
