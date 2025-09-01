@@ -1,224 +1,156 @@
-<!-- Seção Sobre Mim -->
-<section id="sobre-mim" aria-labelledby="sobre-mim-titulo">
-  <div class="sobre-container">
-    <figure class="sobre-foto">
-      <img src="https://via.placeholder.com/420x500.png?text=Sua+Foto" alt="Foto de [Seu Nome], sorrindo e olhando para a câmera.">
-    </figure>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meus Projetos</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  <style>
+    :root {
+      --bg: #0f1220;
+      --panel: #14182b;
+      --text: #eef1ff;
+      --muted: #aab1d6;
+      --brand: #6c8cff;
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 60px 20px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .subtitulo {
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: var(--panel);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .preview {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #1f2338;
+    }
+    .conteudo {
+      padding: 20px;
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+    .card p {
+      color: var(--muted);
+      margin: 12px 0;
+      font-size: 0.95rem;
+    }
+    .techs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .techs img {
+      width: 24px;
+      height: 24px;
+    }
+    .links a {
+      margin-right: 12px;
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <section id="projetos" class="projetos">
+    <div class="container">
+      <h2>💻 Meus Projetos</h2>
+      <p class="subtitulo">Veja abaixo alguns dos projetos que desenvolvi com foco em frontend, acessibilidade e boas práticas.</p>
 
-    <div class="sobre-conteudo">
-      <h2 id="sobre-mim-titulo">✌️ Sobre mim</h2>
-      <p class="sobre-intro">
-        Oi! Eu sou <strong>[Seu Nome]</strong>, dev front-end com uma quedinha por interfaces bonitas e código limpo.
-        Se me der um café e um editor de código, eu fico feliz por horas.
-      </p>
-      <p>
-        Comecei por curiosidade, fiquei por paixão e hoje não me vejo fazendo outra coisa. Gosto de trabalhar com
-        <strong>React</strong>, <strong>TypeScript</strong> e aquele <strong>CSS esperto</strong> que resolve sem complicar.
-      </p>
-
-      <div class="sobre-cards">
+      <div class="cards">
         <div class="card">
-          <h3>Habilidades</h3>
-          <ul class="skills">
-            <li><span class="tag">HTML</span></li>
-            <li><span class="tag">CSS</span></li>
-            <li><span class="tag">JavaScript</span></li>
-            <li><span class="tag">React</span></li>
-            <li><span class="tag">TypeScript</span></li>
-            <li><span class="tag">Git</span></li>
-          </ul>
+          <img src="https://via.placeholder.com/600x180?text=Portfólio" alt="Preview do projeto Portfólio" class="preview" />
+          <div class="conteudo">
+            <h3>Portfólio Responsivo</h3>
+            <p>Site pessoal com tema escuro, animações suaves e layout adaptável. Aprendi sobre design responsivo e acessibilidade.</p>
+            <div class="techs">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+            </div>
+            <div class="links">
+              <a href="#" target="_blank">🔗 Demo</a>
+              <a href="#" target="_blank">📁 Código</a>
+            </div>
+          </div>
         </div>
 
         <div class="card">
-          <h3>Curiosidades</h3>
-          <ul class="lista">
-            <li>Console.log é meu terapeuta informal.</li>
-            <li>Viciado em pão de queijo e trilhas sonoras de games.</li>
-            <li>Deploy de primeira? Já aconteceu. Uma vez.</li>
-          </ul>
+          <img src="https://via.placeholder.com/600x180?text=To-Do+List" alt="Preview do projeto To-Do List" class="preview" />
+          <div class="conteudo">
+            <h3>To‑Do List com LocalStorage</h3>
+            <p>Aplicativo de tarefas com persistência de dados no navegador. Pratiquei manipulação de DOM e armazenamento local.</p>
+            <div class="techs">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+            </div>
+            <div class="links">
+              <a href="#" target="_blank">🔗 Demo</a>
+              <a href="#" target="_blank">📁 Código</a>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="sobre-cta">
-        <a class="botao" href="mailto:seuemail@exemplo.com">Fale comigo</a>
-        <nav class="social">
-          <a href="https://github.com/seuusuario" aria-label="GitHub">🐙 GitHub</a>
-          <a href="https://www.linkedin.com/in/seuusuario" aria-label="LinkedIn">💼 LinkedIn</a>
-          <a href="https://www.instagram.com/seuusuario" aria-label="Instagram">📸 Instagram</a>
-        </nav>
+        <div class="card">
+          <img src="https://via.placeholder.com/600x180?text=Clima+App" alt="Preview do projeto Clima App" class="preview" />
+          <div class="conteudo">
+            <h3>App de Previsão do Tempo</h3>
+            <p>Busca por cidade e exibição de clima via API. Aprendi sobre consumo de APIs e tratamento de erros.</p>
+            <div class="techs">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+            </div>
+            <div class="links">
+              <a href="#" target="_blank">🔗 Demo</a>
+              <a href="#" target="_blank">📁 Código</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Estilos -->
-<style>
-  :root{
-    --bg:#0b0b10;
-    --card:#12121a;
-    --text:#e7e7ee;
-    --muted:#a5a6b0;
-    --primary:#7c5cff;
-    --primary-2:#5d3cff;
-    --border:#232334;
-    --tag-bg:#1a1b2a;
-  }
-
-  @media (prefers-color-scheme: light){
-    :root{
-      --bg:#f7f8fb;
-      --card:#ffffff;
-      --text:#1f2230;
-      --muted:#5a5c67;
-      --primary:#6a4cff;
-      --primary-2:#4a2fff;
-      --border:#e7e8ee;
-      --tag-bg:#f0f1f7;
-    }
-  }
-
-  #sobre-mim{
-    background: linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--bg) 85%, var(--primary) 15%));
-    padding: 72px 20px;
-  }
-
-  .sobre-container{
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-    align-items: center;
-  }
-
-  .sobre-foto{
-    margin: 0;
-    border-radius: 20px;
-    overflow: hidden;
-    background: var(--card);
-    border: 1px solid var(--border);
-    box-shadow: 0 10px 30px rgba(0,0,0,.25);
-  }
-  .sobre-foto img{
-    width: 100%;
-    height: auto;
-    display: block;
-    aspect-ratio: 6/7;
-    object-fit: cover;
-  }
-
-  .sobre-conteudo h2{
-    font-size: clamp(28px, 3vw, 40px);
-    margin: 0 0 12px;
-    color: var(--text);
-  }
-  .sobre-intro{
-    font-size: 1.125rem;
-    color: var(--text);
-    margin: 0 0 10px;
-  }
-  .sobre-conteudo p{
-    color: var(--muted);
-    line-height: 1.7;
-    margin: 0 0 18px;
-  }
-
-  .sobre-cards{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin: 20px 0;
-  }
-  .card{
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px;
-  }
-  .card h3{
-    margin: 0 0 12px;
-    font-size: 1rem;
-    letter-spacing: .3px;
-    color: var(--text);
-  }
-
-  .skills, .lista{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 12px;
-  }
-  .lista{
-    flex-direction: column;
-    gap: 8px;
-  }
-  .lista li{
-    color: var(--muted);
-  }
-
-  .tag{
-    background: var(--tag-bg);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 8px 12px;
-    font-size: .9rem;
-    display: inline-block;
-  }
-
-  .sobre-cta{
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    margin-top: 16px;
-    flex-wrap: wrap;
-  }
-
-  .botao{
-    background: linear-gradient(135deg, var(--primary), var(--primary-2));
-    color: #fff;
-    border: 0;
-    padding: 12px 18px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 8px 18px rgba(92,63,255,.35);
-    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
-  }
-  .botao:hover{
-    transform: translateY(-2px);
-    filter: brightness(1.05);
-    box-shadow: 0 10px 20px rgba(92,63,255,.4);
-  }
-
-  .social{
-    display: flex;
-    gap: 12px;
-  }
-  .social a{
-    color: var(--muted);
-    text-decoration: none;
-    border: 1px solid var(--border);
-    padding: 10px 12px;
-    border-radius: 10px;
-    background: var(--card);
-    transition: background .15s ease, color .15s ease, border-color .15s ease;
-  }
-  .social a:hover{
-    color: var(--text);
-    border-color: color-mix(in srgb, var(--primary), var(--border) 40%);
-    background: color-mix(in srgb, var(--card) 80%, var(--primary) 20%);
-  }
-
-  @media (min-width: 880px){
-    .sobre-container{
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 40px;
-    }
-    .sobre-cards{
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-</style>
+  </section>
+</body>
+</html>
