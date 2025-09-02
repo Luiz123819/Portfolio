@@ -44,7 +44,7 @@ body {
 
 /* Cabeçalho */
 header {
-  background-color: rgba(0, 0, 0, 0.6);
+
   padding: 1rem 2rem;
 
   backdrop-filter: blur(20px);
@@ -53,6 +53,11 @@ header {
   background-color: rgba(255, 255, 255, 0.377);
   /* Optional: adds a frosted glass effect */
   border-bottom: 1px solid white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 4px 12px rgba(0, 0  ,0, 0.1);
 }
 
 .nav_bar {
@@ -106,8 +111,9 @@ main.home_container {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   padding: 2rem;
+  margin-top: 70px;
 }
 
 .home_content {
@@ -128,14 +134,45 @@ main.home_container {
   font-weight: 800;
   color: white;
 }
-
-.home_group_text span {
-  font-size: 1.2rem;
-  display: block;
+.home_group_text h2 {
+  margin-top: 10px;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   margin-bottom: 2rem;
-  color: #00bcd4;
+  color: #ffffff;
   font-weight: 600;
+  overflow: hidden;
+  display: flex;
+  align-items: center;     /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 15px;
+  width: 100%;
+  height: calc(1em + 4px);
+  text-align: center;
 }
+
+
+.text-animado {
+  position: relative;
+  display: block;
+  height: calc(1em + 4px); /* Igual à altura do texto */
+  overflow: hidden;
+  color: #00bcd4;
+}
+
+.text-animado span {
+  display: block;
+  text-align: start;
+  font-size: inherit;
+  animation: animeText 6s infinite ease-in-out;
+}
+
+@keyframes animeText {
+  0%   { transform: translateY(0%); }
+  33%  { transform: translateY(-100%); }
+  66%  { transform: translateY(-200%); }
+  100% { transform: translateY(-300%); }
+}
+
 
 .home_buttons {
   display: flex;
@@ -242,34 +279,74 @@ section.sobre_mim {
   color: rgb(116, 116, 116);
 }
 
-.habilidade {}
+.habilidade {
+  width: 300px;
+}
 
 .habilidade h3 {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
-  color: rgb(255, 255, 255);
+  color: #fff;
 }
 
 .images_habilidades {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem;
+  cursor: pointer;
 
-  gap: 30px;
+}
 
+.img_iner_content {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: loop linear infinite ;
+}
+
+.original,
+.clone {
+  display: flex;
+  gap: 1rem;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .images_habilidades img {
   width: 30px;
   height: 30px;
   cursor: pointer;
-  transition: .5s ease;
+  transition: 0.5s ease;
+  border: 1px solid transparent;
 }
 
 .images_habilidades img:hover {
   scale: 1.2;
-  opacity: .8;
+  opacity: 0.8;
 }
+
+/* Destaca os clones visualmente (opcional para teste) */
+.clone img {
+  border-color: red;
+}
+
+
+/* Pausar animação ao passar o mouse */
+.images_habilidades:hover .img_iner_content {
+  animation-play-state: paused;
+}
+
 
 .buttons_contacts {
   display: flex;
@@ -368,6 +445,7 @@ section.projetos {
 }
 
 .card {
+  position: absolute;
   max-width: 300px;
  max-height: 500PX;
   border-radius: 20px !important;
@@ -378,6 +456,40 @@ section.projetos {
 
   transition: .5s ease;
   background-color: rgba(70, 112, 122, 0.116) !important;
+}
+.status_card{
+  position: absolute ;
+  right: 15px;
+  top: 15px;
+  color: #0076b5;
+  font-size: .6rem;
+  font-weight: 600;
+  background-color: #0076b556;
+  border: 1px solid #0076b5;
+  padding: .3rem .5rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+gap: 5px;
+}
+.status_card i{
+  font-size: .5rem;
+  animation: pulse 1s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%{
+    transform: scale(1);
+    
+  }
+ 50%{
+    transform: scale(1.1);
+   
+  }
+    100%{
+    transform: scale(1);
+  
+  }
 }
 .card .text{
   font-weight: 500;
@@ -484,7 +596,10 @@ section.projetos {
   .home_group_text {
     margin-top: -30px;
   }
-
+  .home_group_text h2{
+    display: flex;
+    width: 100%;
+  }
   .home_content img {
     width: 200px;
     height: 200px;
@@ -499,7 +614,9 @@ section.projetos {
   .home_group_text h1 {
     font-size: 2rem;
   }
-
+  .home_group_text h2{
+    margin-top: 40px;
+  }
   .home_content img {
     max-width: 80%;
   }
