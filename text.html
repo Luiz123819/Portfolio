@@ -1,126 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Carrossel de Cards com Imagens</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meus Projetos</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
   <style>
-    body {
+    :root {
+      --bg: #0f1220;
+      --panel: #14182b;
+      --text: #eef1ff;
+      --muted: #aab1d6;
+      --brand: #6c8cff;
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 0;
     }
-
-    .carrossel-container {
-      width: 90%;
-      max-width: 900px;
-      overflow: hidden;
-      position: relative;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 60px 20px;
     }
-
-    .carrossel {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
+    .container {
+      max-width: 1100px;
+      margin: auto;
     }
-
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .subtitulo {
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
     .card {
-      min-width: 280px;
-      margin: 0 10px;
-      background: #1e1e1e;
-      border-radius: 10px;
+      background: var(--panel);
+      border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      flex-shrink: 0;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
     }
-
-    .card img {
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .preview {
       width: 100%;
       height: 180px;
       object-fit: cover;
+      background: #1f2338;
     }
-
-    .card-content {
-      padding: 15px;
+    .conteudo {
+      padding: 20px;
     }
-
     .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.2em;
+      margin-top: 0;
+      font-size: 1.4rem;
     }
-
     .card p {
-      font-size: 0.95em;
-      color: #ccc;
+      color: var(--muted);
+      margin: 12px 0;
+      font-size: 0.95rem;
     }
-
-    .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.1);
-      border: none;
-      color: #fff;
-      font-size: 2em;
-      padding: 10px;
-      cursor: pointer;
-      z-index: 1;
+    .techs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
     }
-
-    .prev { left: 0; }
-    .next { right: 0; }
+    .techs img {
+      width: 24px;
+      height: 24px;
+    }
+    .links a {
+      margin-right: 12px;
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <div class="carrossel-container">
-    <button class="nav-btn prev">&#10094;</button>
-    <div class="carrossel" id="carrossel">
-      <div class="card">
-        <img src="https://source.unsplash.com/400x180/?car,sport" alt="Carro esportivo">
-        <div class="card-content">
-          <h3>Carro Esportivo</h3>
-          <p>Design agressivo e alto desempenho nas pistas.</p>
+  <section id="projetos" class="projetos">
+    <div class="container">
+      <h2>💻 Meus Projetos</h2>
+      <p class="subtitulo">Veja abaixo alguns dos projetos que desenvolvi com foco em frontend, acessibilidade e boas práticas.</p>
+
+      <div class="cards">
+        <div class="card">
+          <img src="https://via.placeholder.com/600x180?text=Portfólio" alt="Preview do projeto Portfólio" class="preview" />
+          <div class="conteudo">
+            <h3>Portfólio Responsivo</h3>
+            <p>Site pessoal com tema escuro, animações suaves e layout adaptável. Aprendi sobre design responsivo e acessibilidade.</p>
+            <div class="techs">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+            </div>
+            <div class="links">
+              <a href="#" target="_blank">🔗 Demo</a>
+              <a href="#" target="_blank">📁 Código</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x180/?car,classic" alt="Carro clássico">
-        <div class="card-content">
-          <h3>Carro Clássico</h3>
-          <p>Elegância atemporal e charme vintage.</p>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/600x180?text=To-Do+List" alt="Preview do projeto To-Do List" class="preview" />
+          <div class="conteudo">
+            <h3>To‑Do List com LocalStorage</h3>
+            <p>Aplicativo de tarefas com persistência de dados no navegador. Pratiquei manipulação de DOM e armazenamento local.</p>
+            <div class="techs">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+            </div>
+            <div class="links">
+              <a href="#" target="_blank">🔗 Demo</a>
+              <a href="#" target="_blank">📁 Código</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x180/?car,electric" alt="Carro elétrico">
-        <div class="card-content">
-          <h3>Carro Elétrico</h3>
-          <p>Tecnologia sustentável e inovação silenciosa.</p>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/600x180?text=Clima+App" alt="Preview do projeto Clima App" class="preview" />
+          <div class="conteudo">
+            <h3>App de Previsão do Tempo</h3>
+            <p>Busca por cidade e exibição de clima via API. Aprendi sobre consumo de APIs e tratamento de erros.</p>
+            <div class="techs">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+            </div>
+            <div class="links">
+              <a href="#" target="_blank">🔗 Demo</a>
+              <a href="#" target="_blank">📁 Código</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <button class="nav-btn next">&#10095;</button>
-  </div>
-
-  <script>
-    const carrossel = document.getElementById('carrossel');
-    const cardWidth = 300; // largura do card + margem
-    let scrollPosition = 0;
-
-    document.querySelector('.next').addEventListener('click', () => {
-      scrollPosition += cardWidth;
-      if (scrollPosition > carrossel.scrollWidth - carrossel.clientWidth) {
-        scrollPosition = 0;
-      }
-      carrossel.style.transform = `translateX(-${scrollPosition}px)`;
-    });
-
-    document.querySelector('.prev').addEventListener('click', () => {
-      scrollPosition -= cardWidth;
-      if (scrollPosition < 0) scrollPosition = 0;
-      carrossel.style.transform = `translateX(-${scrollPosition}px)`;
-    });
-  </script>
+  </section>
 </body>
 </html>

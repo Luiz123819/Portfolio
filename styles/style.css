@@ -143,7 +143,7 @@ main.home_container {
   overflow: hidden;
   display: flex;
   align-items: center;     /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
+  justify-content: start; /* Centraliza horizontalmente */
   gap: 15px;
   width: 100%;
   height: calc(1em + 4px);
@@ -157,6 +157,8 @@ main.home_container {
   height: calc(1em + 4px); /* Igual à altura do texto */
   overflow: hidden;
   color: #00bcd4;
+  background-color: #ffffff6c;
+  padding: 0px 5px;
 }
 
 .text-animado span {
@@ -261,6 +263,7 @@ section.sobre_mim {
   font-weight: 700;
   margin-bottom: -40px;
   color: white;
+  
 }
 
 .title .title_content {
@@ -560,6 +563,49 @@ gap: 5px;
     transform: translateY(0);
   }
 }
+.nav_group_mobile{
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+.nav_group_mobile ul{
+  margin-top: 20px;
+  width: 100%;
+}
+.nav_group_mobile ul li a:hover{
+  color: rgb(221, 221, 220);
+}
+.nav_group_mobile li {
+ 
+  width: 100% !important;
+  height: 40PX;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease-in-out;
+}
+.nav_group_mobile li:hover{
+   background-color: rgb(0, 195, 255);
+}
+.nav_list_mobile hr{
+  color: #ffffff;
+  width: 100%;
+}
+.nav_list_mobile {
+  list-style: none;
+  display: none;
+  margin:  auto;
+}
+/*CLASSES JS*/
+.nav_list_mobile.open{
+  display: block !important;
+
+}
 
 /* RESPONSIVO*/
 @media (max-width: 768px) {
@@ -586,8 +632,13 @@ gap: 5px;
     position: absolute;
     right: 10px;
     font-size: 40px;
+    
   }
-
+  
+.btn_menu_mobile i{
+  transform: scale(1);
+  transition: .5s ease;
+}
   .home_content {
     flex-direction: column;
     text-align: center;

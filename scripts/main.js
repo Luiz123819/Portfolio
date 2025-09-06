@@ -11,3 +11,27 @@ const original = document.querySelector('.original');
   // Aplica a duração proporcional à largura
   const carrossel = document.getElementById('carrossel');
   carrossel.style.animationDuration = `${totalWidth / 20}s`; 
+
+
+
+
+  //MENU
+  const menu=document.querySelector("i")
+  const list = document.querySelector(".nav_list_mobile")
+console.log(menu, ",,,,,,,,,,,,,,", list)
+  menu.addEventListener('click', () =>{
+   
+    list.classList.toggle("open");
+
+    if(list.classList.contains("open")){
+      menu.classList.remove("fa-bars")
+       menu.classList.add("fa-times"); 
+    }else{
+        menu.classList.remove("fa-times");
+        menu.classList.add("fa-bars")
+
+    
+    }
+    
+  })
+
