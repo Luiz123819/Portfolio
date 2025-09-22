@@ -94,6 +94,10 @@ header {
 .nav_item a {
   text-decoration: none;
   color: #fff;
+  text-shadow:
+    0 0 5px #fff;
+
+
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -139,6 +143,8 @@ main.home_container {
   font-family: 'Orbitron', Arial, sans-serif;
   font-weight: 800;
   color: white;
+    text-shadow:
+    0 0 5px #fff;
 }
 
 .home_group_text h2 {
@@ -202,8 +208,8 @@ main.home_container {
   gap: 1rem;
 }
 
-.btn_contact,
-.btn_curriculum {
+.btn_contact
+ {
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 5px;
@@ -213,9 +219,22 @@ main.home_container {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
-.btn_contact:hover,
-.btn_curriculum:hover {
+.btn_curriculum{
+padding: 0.8rem 1.5rem;
+  border: 2px solid #00bcd4;
+  border-radius: 5px;
+  border-color: #00bcd4;
+  background-color: transparent;
+  color: #00bcd4;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn_curriculum:hover{
+  color: rgb(255, 255, 255);
+    background-color: #084950;
+}
+.btn_contact:hover {
   background-color: #0097a7;
 }
 
@@ -235,7 +254,98 @@ main.home_container {
   opacity: 0.8;
 
 }
+    .servicos {
+      padding: 60px 20px;
+      
 
+    }
+
+    .servicos h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #007bff;
+    }
+
+    .cards-container {
+      display: flex;
+    
+      justify-content: center;
+      align-content: center;
+      gap: 25px;
+ flex-wrap: wrap;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #fefefe;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+       cursor:pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    width: 250px;
+
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card i {
+      font-size: 2.5em;
+      color: #007bff;
+     margin-bottom: 20px;
+    }
+   .efectIconFUndo {
+    position: relative ;
+  padding: 2.3rem;
+  background-color: #00a6ff2d;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+  z-index: 1 ;
+}
+ .efectIconFUndo i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 0 ;
+animation: none !important;
+z-index: 10 ;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+
+    .card h3 {
+      text-align: center;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #525252;
+    }
+
+    .card p {
+      font-size: 1em;
+      text-align: center;
+      color: #555;
+    }
 /*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
 section.sobre_mim {
   min-height: 100vh;
@@ -549,16 +659,42 @@ section.projetos {
 
 
 section.contacts{
-  min-height: 60vh;
+  min-height: 30vh;
    padding: 2rem;
+   background: linear-gradient(
+  -45deg,
+  rgba(0, 183, 255, 0.08),
+  rgba(0, 157, 255, 0.15),
+  rgba(0, 132, 255, 0.22),
+  rgba(255, 255, 255, 0.3),
+  rgb(255, 255, 255)
+);
+
+  background-size: 300% 300%;
+  animation: blackgroun 5s ease infinite;
 }
-.contacts_content{
+.contacts_content {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
+
+ 
 }
+
+@keyframes blackgroun {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .card_contato{
 
 width: 200px;
@@ -576,10 +712,11 @@ width: 200px;
   height: 60px;
   width: 60px;
   border-radius:50%;
-  background-color: #252525e1;
+  background-color: #fffdfde1;
   display: flex;
   align-items: center;
   justify-content: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   
 }
 .card_contato .fudo_icon i{
@@ -591,12 +728,13 @@ width: 200px;
   font-weight: 600;
   margin-top: 10px;
   margin-bottom: 1px;
+  color: #454545c9;
 }
 .card_contato span
 {
   font-size: 1rem;
   font-weight: 500;
-  color: #00000085;
+  color: #00000044;
 }
 /*ANIMAÇÕES*/
 @keyframes flutua {

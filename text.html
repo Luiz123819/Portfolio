@@ -1,295 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio Programador</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Meus Serviços</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    :root {
-      --color1: #e5e5e5;
-      --color2: #bdbdbd;
-      --color3: #959595;
-      --color4: #6d6d6d;
-      --color5: #454545;
-    }
-
-    * {
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      background-color: #f4f4f4;
+      color: #333;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, var(--color1), var(--color3));
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      color: var(--color5);
+    .servicos {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #fff;
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .servicos h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #007bff;
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      color: var(--color5);
-    }
-
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--color5);
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--color3);
-    }
-
-    main {
-      margin-top: 100px;
-      padding: 2rem;
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
       max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    section {
-      margin-bottom: 4rem;
-    }
-
-    .title {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .title span {
-      color: var(--color3);
-    }
-
-    .line {
-      width: 100px;
-      height: 2px;
-      background-color: var(--color3);
-      margin: 0 auto 2rem;
-    }
-
-    #home p {
-      text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    #home .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .buttons button {
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      background-color: var(--color3);
-      color: var(--color1);
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .buttons button:hover {
-      background-color: var(--color4);
-    }
-
-    #sobre ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      list-style: none;
-      margin-top: 1rem;
-    }
-
-    #sobre li {
-      background-color: var(--color2);
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
+      margin: 0 auto;
     }
 
     .card {
-      background-color: var(--color2);
-      border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      max-width: 300px;
+      background-color: #fefefe;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transition: transform 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
     }
 
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+    .card i {
+      font-size: 2.5em;
+      color: #007bff;
+      margin-bottom: 15px;
     }
 
     .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.4em;
+      margin-bottom: 10px;
     }
 
     .card p {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card a {
-      text-decoration: none;
-      color: var(--color5);
-      font-weight: 600;
-      margin-right: 1rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    input, textarea {
-      padding: 0.8rem;
-      border: 1px solid var(--color3);
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    button[type="submit"] {
-      background-color: var(--color3);
-      color: var(--color1);
-      border: none;
-      padding: 0.8rem;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button[type="submit"]:hover {
-      background-color: var(--color4);
-    }
-
-    .redes {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .redes a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: var(--color5);
-      font-weight: 600;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: var(--color2);
-      color: var(--color5);
+      font-size: 1em;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>SeuNomeDev</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#certificados">Certificados</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+  <section id="servicos" class="servicos">
+    <h2>💼 Meus Serviços</h2>
+    <div class="cards-container">
 
-  <main>
-    <section id="home">
-      <h2 class="title">Olá, eu sou <span>Seu Nome</span></h2>
-      <div class="line"></div>
-      <p>Desenvolvedor Front-End apaixonado por criar experiências digitais incríveis.</p>
-      <div class="buttons">
-        <button>Ver Currículo</button>
-        <button>Entrar em Contato</button>
+      <div class="card">
+        <i class="fas fa-code"></i>
+        <h3>Desenvolvimento Web</h3>
+        <p>Sites modernos, responsivos e otimizados para SEO.</p>
       </div>
-    </section>
 
-    <section id="sobre">
-      <h2 class="title">Sobre <span>Mim</span></h2>
-      <div class="line"></div>
-      <p>Sou um desenvolvedor com foco em interfaces modernas e acessíveis. Tenho experiência com projetos pessoais e colaborativos.</p>
-      <ul>
-        <li>💻 HTML, CSS, JavaScript</li>
-        <li>⚛️ React, Node.js</li>
-        <li>🧠 Git, Figma, APIs REST</li>
-      </ul>
-    </section>
-
-    <section id="projetos">
-      <h2 class="title">Meus <span>Projetos</span></h2>
-      <div class="line"></div>
-      <div class="cards">
-        <div class="card">
-          <img src="projeto1.jpg" alt="Projeto 1">
-          <h3>Landing Page Responsiva</h3>
-          <p>HTML, CSS, JS</p>
-          <a href="#">GitHub</a>
-          <a href="#">Ver Online</a>
-        </div>
-        <div class="card">
-          <img src="projeto2.jpg" alt="Projeto 2">
-          <h3>Dashboard Interativo</h3>
-          <p>React, Chart.js</p>
-          <a href="#">GitHub</a>
-          <a href="#">Ver Online</a>
-        </div>
+      <div class="card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Aplicativos Mobile</h3>
+        <p>Apps nativos e híbridos para Android e iOS.</p>
       </div>
-    </section>
 
-    <section id="certificados">
-      <h2 class="title">Meus <span>Certificados</span
+      <div class="card">
+        <i class="fas fa-server"></i>
+        <h3>APIs e Back-End</h3>
+        <p>APIs RESTful, bancos de dados e arquitetura escalável.</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-pencil-ruler"></i>
+        <h3>UI/UX Design</h3>
+        <p>Interfaces intuitivas e protótipos que encantam.</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Segurança e Performance</h3>
+        <p>Auditoria de código e otimização de velocidade.</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Consultoria Técnica</h3>
+        <p>Mentoria e apoio estratégico para projetos e startups.</p>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
