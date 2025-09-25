@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LUIZ FERNANDO | PORTFÓLIO</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -88,9 +88,9 @@
             <div class="cards-container">
 
                 <div class="card">
-                   <div class="efectIconFUndo">
-                    <i class="fas fa-code" id="iconedoefect"></i>
-                    </div> 
+                    <div class="efectIconFUndo">
+                        <i class="fas fa-code" id="iconedoefect"></i>
+                    </div>
                     <h3>Desenvolvimento Web</h3>
                     <p>Sites modernos, responsivos e otimizados para SEO.</p>
                 </div>
@@ -205,8 +205,31 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
         </section>
+
+        <!-- Modal -->
+        <dialog class="modal_div">
+            <div class="modal_content">
+                <div class="modal_left"> <video controls>
+                        <source src="#" type="" /> Seu navegador não suporta vídeo.
+                    </video>
+                    <div class="modal_buttons"> <a href="#"><button>Acessar Projeto</button></a> <a
+                            href="#"><button>Acessar Repositório</button></a> <a href="#"><button>Ver post no
+                                LinkedIn</button></a> </div>
+                </div>
+                <div class="modal_right">
+                    <div class="modal_right_text"> <div class="titleModal"> <h2>HS Exprex Transportes</h2> <button class="modal_close" aria-label="Fechar Modal"> <i
+                                class="fa fa-times" ></i> </button></div>
+                       
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eius iusto exercitationem non
+                            omnis quidem. Ipsum cumque numquam sit ullam suscipit aspernatur, soluta, et laborum debitis
+                            optio at. Minima, voluptatum. </p> <strong>7 de março de 2022</strong>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+
         <!----SECTION----PROJETOS------>
         <section class="projetos">
             <div class="projetos_content">
@@ -230,7 +253,7 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="project_line">
-                        <div class="image_container">
+                        <div class="image_container" id="button_card_modal_open">
                             <img class="img_fundo" src="assets/Projeto_hsexprex.jpeg"
                                 alt="PROJETO HS EXPREX TRANSPORTESPORTES" />
                             <div class="image_conver">

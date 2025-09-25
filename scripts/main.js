@@ -35,3 +35,16 @@ console.log(menu, ",,,,,,,,,,,,,,", list)
     
   })
 
+const modalOpen = document.getElementById("button_card_modal_open");
+const modal = document.querySelector(".modal_div");
+
+modalOpen.addEventListener("click", () => {
+  modal.style.visibility = "visible"; // ou "block", dependendo do seu CSS
+});
+
+const modalClose = document.querySelector(".modal_close");
+
+modalClose.addEventListener("click", () => {
+  modal.style.visibility = "hidden";
+});
+
